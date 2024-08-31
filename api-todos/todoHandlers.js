@@ -1,10 +1,12 @@
 const ToDo = require("./todoLib");
 
+
 // Get all todos
 const getAllTodos = (req, res) => {
     const todos = ToDo.getAll();
     res.json(todos);
 };
+
 
 // Create a new todo
 const createTodo = (req, res) => {
@@ -19,6 +21,7 @@ const createTodo = (req, res) => {
     }
 };
 
+
 // Get a todo by ID
 const getTodoById = (req, res) => {
     const numericId = Number(req.params.todoId); 
@@ -29,6 +32,7 @@ const getTodoById = (req, res) => {
       res.status(404).json({ message: 'Todo not found' });
     }
 };
+
 
 // Update a todo by ID
 const updateTodo = (req, res) => {
@@ -44,6 +48,7 @@ const updateTodo = (req, res) => {
       res.status(404).json({ message: "Todo not found" });
     }
 };
+
 
 // Delete a todo by ID
 const deleteTodo = (req, res) => {
